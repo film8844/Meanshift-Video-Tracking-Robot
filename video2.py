@@ -44,7 +44,8 @@ while(1):
         # pts = np.int0(pts)
         # final_image = cv.polylines(frame, [pts], True, (0, 255, 0), 2)
         x,y,w,h = track_window
-        final_image = cv.rectangle(frame, (x,y), (x+w, y+h), 255, 3)
+        # final_image = cv.rectangle(frame, (x,y), (x+w, y+h), 255, 3)
+        final_image = cv.circle(frame, (int(x+w/2) ,int(y+h/2) ), 50, (0,0,255), -1)
 
         cv.imshow('dst', dst)
         cv.imshow('final_image',final_image)
